@@ -8,10 +8,11 @@ public class MainActivity extends AppCompatActivity {
     //주효가 수정
     //주효가 또 수정
     //현주가 수정
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
 }
+
