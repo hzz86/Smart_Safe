@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
     public void onClickJoin(View view) {
-        Intent intent = new Intent(getApplicationContext(), join_Activity.class);
+        Intent intent = new Intent(getApplicationContext(), JoinActivity.class);
         startActivity(intent);
         finish();
 

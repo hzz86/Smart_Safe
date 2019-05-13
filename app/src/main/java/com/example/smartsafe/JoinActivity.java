@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class join_Activity extends AppCompatActivity {
+public class JoinActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -13,5 +13,10 @@ public class join_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_join);
     }
 
+    public void onClickJoin(View view) {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+        finish();
 
+    }
 }
