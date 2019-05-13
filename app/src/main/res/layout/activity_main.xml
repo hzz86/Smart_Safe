@@ -17,8 +17,8 @@
             android:layout_height="261dp"
             android:layout_gravity="center"
             android:layout_marginTop="60dp"
-            app:srcCompat="@drawable/main_logo"
-            android:contentDescription="@string/contentDescription" />
+            android:contentDescription="@string/contentDescription"
+            app:srcCompat="@mipmap/ic_launcher" />
 
         <EditText
             android:id="@+id/editText_ID"
@@ -34,7 +34,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/editText_PW"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
