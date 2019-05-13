@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Smart Safe</string>
+    <string name="id">ID</string>
+    <string name="password">PASSWORD</string>
+    <string name="login">로그인</string>
+    <string name="AddNew">회원가입</string>
+    <string name="contentDescription">contentDescription</string>
 </resources>
