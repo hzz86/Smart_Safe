@@ -19,11 +19,11 @@ public class Menu extends AppCompatActivity {
                 case R.id.navigation_home:
                     mTextMessage.setText(R.string.title_home);
                     return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
+                case R.id.navigation_safe:
+                    mTextMessage.setText(R.string.title_safe);
                     return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                case R.id.navigation_setting:
+                    mTextMessage.setText(R.string.title_setting);
                     return true;
             }
             return false;
