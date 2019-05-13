@@ -14,7 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
-public class HOME extends AppCompatActivity
+public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
