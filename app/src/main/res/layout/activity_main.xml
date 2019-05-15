@@ -17,8 +17,8 @@
             android:layout_height="261dp"
             android:layout_gravity="center"
             android:layout_marginTop="60dp"
-            app:srcCompat="@drawable/main_logo"
-            android:contentDescription="@string/contentDescription" />
+            android:contentDescription="@string/contentDescription"
+            app:srcCompat="@drawable/main_logo" />
 
         <EditText
             android:id="@+id/editText_ID"
@@ -57,6 +57,7 @@
                 android:layout_width="71dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="onClickHome"
                 android:text="@string/login"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -69,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="onClickJoin"
-                android:text="@string/AddNew"
+                android:text="@string/addnew"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
