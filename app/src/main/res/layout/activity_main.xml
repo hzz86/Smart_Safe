@@ -18,7 +18,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="60dp"
             android:contentDescription="@string/contentDescription"
-            app:srcCompat="@drawable/main_logo" />
+            app:srcCompat="@color/colorPrimary" />
 
         <EditText
             android:id="@+id/editText_ID"
