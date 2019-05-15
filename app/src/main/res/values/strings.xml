@@ -3,7 +3,11 @@
     <string name="id">ID</string>
     <string name="password">PASSWORD</string>
     <string name="login">로그인</string>
-    <string name="addnew">회원가입</string>
+    <string name="join">회원가입</string>
+    <string name="phonenumber">연락처</string>
+    <string name="email">이메일</string>
+    <string name="undo">취소</string>
+    <string name="commit">완료</string>
     <string name="contentDescription">contentDescription</string>
     <string name="title_activity_home">HOME</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
