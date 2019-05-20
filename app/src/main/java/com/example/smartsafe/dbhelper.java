@@ -9,8 +9,8 @@ class dbhelper extends SQLiteOpenHelper {
     private static final String DB_name="ourdb1.db";
     private static final int DB_version=1;
 
-    public dbhelper(Context context, String DB_name, SQLiteDatabase.CursorFactory factory, int DB_version) {
-        super(context, DB_name, factory, DB_version);
+    public dbhelper(Context context) {
+        super(context, DB_name, null, DB_version);
     }
 
     @Override

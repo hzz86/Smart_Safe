@@ -27,7 +27,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/editname"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -37,7 +37,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/editpwd"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -46,7 +46,7 @@
             android:inputType="textPassword" />
 
         <EditText
-            android:id="@+id/editText7"
+            android:id="@+id/editphone"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -55,7 +55,7 @@
             android:inputType="phone" />
 
         <EditText
-            android:id="@+id/editText8"
+            android:id="@+id/editemail"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -79,7 +79,7 @@
                 android:text="@string/undo" />
 
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/joinBtn"
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
