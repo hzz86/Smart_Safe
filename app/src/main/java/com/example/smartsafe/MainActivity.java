@@ -19,6 +19,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void onClickTest(View view) {
+        Intent intent = new Intent(getApplicationContext(), Home.class);
+        startActivity(intent);
+        finish();
+
+    }
+
     public void onClickHome(View view) {
         Intent intent = new Intent(getApplicationContext(), Home.class);
         startActivity(intent);
