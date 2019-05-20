@@ -21,7 +21,7 @@
             app:srcCompat="@color/colorPrimary" />
 
         <EditText
-            android:id="@+id/editText_ID"
+            android:id="@+id/edit_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -34,7 +34,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/edit_pw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -52,7 +52,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button1"
+                android:id="@+id/loginBtn"
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="71dp"
                 android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
                 android:text="test" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/joinBtn"
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="71dp"
                 android:layout_height="wrap_content"

@@ -15,7 +15,11 @@ class dbhelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table Member(id INTEGER PRIMARY KEY AUTOINCREMENT,name text, mobile number, email text)");
+        try {
+            db.execSQL("create table Member(id INTEGER PRIMARY KEY AUTOINCREMENT,name text, pw text, mobile number, email text)");
+        } catch (Exception e) {
+            e.printStackTrace();//여기서만 name은 사용자 아이디를 가리킴
+        }
     }
 
     @Override

@@ -30,7 +30,7 @@ public class JoinActivity extends AppCompatActivity {
         pw = findViewById(R.id.editpwd);
         phone = findViewById(R.id.editphone);
         email =  findViewById(R.id.editemail);
-        joinBtn = findViewById(R.id.joinBtn);
+        joinBtn = findViewById(R.id.joinokBtn);
         joinBtn.setOnClickListener(listener);
         //여기까지
 
@@ -41,7 +41,7 @@ public class JoinActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
-                case R.id.joinBtn:
+                case R.id.joinokBtn:
                     String id2 = id.getText().toString();
                     String pwd = pw.getText().toString();
                     String phone2=phone.getText().toString();
