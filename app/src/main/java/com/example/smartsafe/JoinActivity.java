@@ -55,7 +55,7 @@ public class JoinActivity extends AppCompatActivity {
                         finish();
                     } else {
                         // 없다면 아무 값도 가져오지 않으므로 count 가 0 가져옴
-                        String sql2 ="insert into Member(name, pw, mobile, email) values('"+id2+"','"+pwd+"'+'"+phone2+"'+'"+email2+"')";
+                        String sql2 ="insert into Member(name, pw, mobile, email) values('"+id2+"','"+pwd+"','"+phone2+"','"+email2+"')";
                         db.execSQL(sql2);
                         Toast.makeText(JoinActivity.this, "회원가입을 축하합니다.", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(JoinActivity.this, MainActivity.class));
