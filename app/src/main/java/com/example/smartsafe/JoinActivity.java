@@ -1,5 +1,6 @@
 package com.example.smartsafe;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -50,13 +51,13 @@ public class JoinActivity extends AppCompatActivity {
                     String sql = "select * from Member where name = '" + id + "'";
                     Cursor cursor = db.rawQuery(sql, null);
 
-                    if (cursor.getCount() == 1) {
+                    if(cursor.getCount()>0) {
                         // 해당 아이디가 있으면 1개의 row를 가져옴
                         Toast.makeText(JoinActivity.this, "이미 존재하는 아이디입니다.", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(JoinActivity.this, MainActivity.class));
+                        startActivity(new Intent(JoinActivity.this, JoinActivity.class));
                         finish();
-
-                    } else {
+                    }
+                    else {
                         // 없다면 아무 값도 가져오지 않으므로 count 가 0 가져옴
                         String sql2 = "insert into Member(name, pw, mobile, email) values('" + id2 + "','" + pwd + "','" + phone2 + "','" + email2 + "')";
                         db.execSQL(sql2);
