@@ -6,10 +6,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 
 class dbhelper extends SQLiteOpenHelper {
-    private static final String DB_name="ourdb1.db";
-    private static final int DB_version=1;
 
-    public dbhelper(Context context) {super(context, DB_name, null, DB_version); }
+    Context context;
+    public dbhelper(Context context) {super(context, "ourdb.db", null, 1);
+    this.context=context;
+    }
 
     @Override
     public void onCreate(SQLiteDatabase db) {

@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -46,8 +47,16 @@ public class JoinActivity extends AppCompatActivity {
                     String pwd = pw.getText().toString();
                     String phone2=phone.getText().toString();
                     String email2=email.getText().toString();
+
                     String sql = "select * from Member where name = '"+id+"'";
                     Cursor cursor = db.rawQuery(sql, null);
+
+                    while (cursor.moveToNext()) {
+                        String no = cursor.getString(0);
+                        String rest_id = cursor.getString(1);
+                        Log.d("select ", "no : " + no + "\nrest_id : " + rest_id);
+                    }
+
                     if(cursor.getCount() == 1) {
                         // 해당 아이디가 있으면 1개의 row를 가져옴
                         Toast.makeText(JoinActivity.this, "이미 존재하는 아이디입니다.", Toast.LENGTH_SHORT).show();
