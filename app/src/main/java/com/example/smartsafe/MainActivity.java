@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent2 = new Intent(MainActivity.this, MainActivity.class);
                         intent2.putExtra("name", Id);
                         intent2.putExtra("pw", pwd);
-                        startActivity(intent2);
+                        startActivity(new Intent(MainActivity.this, Home.class));
                         finish();
                     } else {
                         // 없다면 아무 값도 가져오지 않으므로 count 가 0

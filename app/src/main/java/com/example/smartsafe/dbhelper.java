@@ -9,9 +9,7 @@ class dbhelper extends SQLiteOpenHelper {
     private static final String DB_name="ourdb1.db";
     private static final int DB_version=1;
 
-    public dbhelper(Context context) {
-        super(context, DB_name, null, DB_version);
-    }
+    public dbhelper(Context context) {super(context, DB_name, null, DB_version); }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -24,8 +22,7 @@ class dbhelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS Member");
-        onCreate(db);
+
     }
 
 }
