@@ -63,20 +63,11 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <Button
-                android:id="@+id/button5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onClickTest"
-                android:text="test" />
-
-            <Button
                 android:id="@+id/joinBtn"
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="71dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="onClickJoin"
                 android:text="@string/join"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

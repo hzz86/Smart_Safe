@@ -76,26 +76,5 @@ public class MainActivity extends AppCompatActivity {
     };
     //여기까지
 
-    public void onClickJoin(View view) {
-        Intent intent = new Intent(getApplicationContext(), JoinActivity.class);
-        startActivity(intent);
-        finish();
-
-    }
-
-    public void onClickTest(View view) {
-        Intent intent = new Intent(getApplicationContext(), Home.class);
-        startActivity(intent);
-        finish();
-
-    }
-
-    public void onClickHome(View view) {
-        Intent intent = new Intent(getApplicationContext(), Home.class);
-        startActivity(intent);
-        finish();
-
-    }
-
 }
-//test
+

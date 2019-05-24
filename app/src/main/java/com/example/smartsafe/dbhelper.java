@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 class dbhelper extends SQLiteOpenHelper {
 
     Context context;
+
     public dbhelper(Context context) {super(context, "ourdb.db", null, 1);
     this.context=context;
     }
