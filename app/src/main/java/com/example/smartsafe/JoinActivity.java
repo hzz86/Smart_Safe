@@ -72,10 +72,4 @@ public class JoinActivity extends AppCompatActivity {
 
     //여기까지
 
-    public void onClickMain(View view) {
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(intent);
-        finish();
-
-    }
 }
