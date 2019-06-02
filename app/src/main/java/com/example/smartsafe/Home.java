@@ -14,7 +14,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.content.Intent;
 
 
 

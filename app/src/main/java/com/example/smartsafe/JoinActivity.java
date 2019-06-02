@@ -1,6 +1,5 @@
 package com.example.smartsafe;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -31,7 +30,7 @@ public class JoinActivity extends AppCompatActivity {
         pw = findViewById(R.id.editpwd);
         phone = findViewById(R.id.editphone);
         email =  findViewById(R.id.editemail);
-        joinBtn = findViewById(R.id.joinokBtn);
+        joinBtn = findViewById(R.id.로그아웃);
         joinBtn.setOnClickListener(listener);
         //여기까지
 
@@ -42,7 +41,7 @@ public class JoinActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
-                case R.id.joinokBtn:
+                case R.id.로그아웃:
                     String id2 = id.getText().toString();
                     String pwd = pw.getText().toString();
                     String phone2 = phone.getText().toString();
