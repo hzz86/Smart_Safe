@@ -31,15 +31,42 @@
 
 
         <Button
-            android:id="@+id/button4"
-            android:layout_width="300dp"
+            android:id="@+id/btnBluetoothOn"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="70dp"
-            android:background="#2478FF"
-            android:onClick="onClickCash"
-            android:text="잔액조회"
-            android:textColor="#FFFFFF" />
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:text="블루투스 ON" />
+
+        <Button
+            android:id="@+id/btnBluetoothOff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:text="블루투스 OFF" />
+
+        <TextView
+            android:id="@+id/tvBluetoothStatus"
+            android:layout_width="170dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:text="status" />
+
+        <Button
+            android:id="@+id/btnConnect"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:text="연결하기" />
+
+        <TextView
+            android:id="@+id/tvReceiveData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Receive" />
 
         <Button
             android:id="@+id/button3"
@@ -72,6 +99,8 @@
             android:onClick="onClickMain"
             android:text="로그아웃"
             android:textColor="#FFFFFF" />
+
+
     </LinearLayout>
 
 
