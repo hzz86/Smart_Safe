@@ -255,7 +255,6 @@ public class Home extends AppCompatActivity {
             }
         }
 
-
         public void cancel() {
             try {
                 mmSocket.close();
