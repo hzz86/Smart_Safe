@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".JoinActivity">
 
+
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
@@ -16,15 +18,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:text="@string/join"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/app_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:title="회원가입"
+            app:titleTextColor="#FFFFFF" />
 
         <EditText
             android:id="@+id/editname"
