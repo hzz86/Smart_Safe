@@ -72,25 +72,17 @@
         <Button
             android:id="@+id/btnConnect"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:text="연결하기" />
 
         <TextView
-            android:id="@+id/tvReceiveData"
+            android:id="@+id/TvReceiveData"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:text="금고 잔액"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/tvSendData"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:text="금고잔액"
             android:ems="10"
             android:gravity="center" />
 

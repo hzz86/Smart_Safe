@@ -10,26 +10,22 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.view.MenuItem;
-import android.support.design.widget.NavigationView;
-import android.support.v4.widget.DrawerLayout;
+import android.support.v7.widget.Toolbar;
 
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,25 +35,15 @@ import java.util.UUID;
 
 public class Home extends AppCompatActivity {
 
-    SwipeRefreshLayout layout;
-
-    public void onClickMain(View view) {
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(intent);
-        finish();
-    }
-
-    public void onClickHistory(View view) {
-        Intent intent = new Intent(getApplicationContext(), History.class);
-        startActivity(intent);
-        finish();
-    }
+//    SwipeRefreshLayout layout;
 
     TextView mTvBluetoothStatus;
     TextView mTvReceiveData;
+  //  TextView mTvSendData;
     Button mBtnBluetoothOn;
     Button mBtnBluetoothOff;
     Button mBtnConnect;
+   // Button mBtnSendData;
 
     BluetoothAdapter mBluetoothAdapter;
     Set<BluetoothDevice> mPairedDevices;
@@ -81,18 +67,17 @@ public class Home extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= 21) {   //상태바 색
             getWindow().setStatusBarColor(Color.parseColor("#001EC9"));
         }
+               Toolbar toolbar = findViewById(R.id.toolbar);
+                setSupportActionBar(toolbar);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-      //  setContentView(R.layout.activity_main);
 
         mTvBluetoothStatus = (TextView)findViewById(R.id.tvBluetoothStatus);
-        mTvReceiveData = (TextView)findViewById(R.id.tvReceiveData);
+        mTvReceiveData = (TextView)findViewById(R.id.TvReceiveData);
+      //  mTvSendData =  (EditText) findViewById(R.id.tvSendData);
         mBtnBluetoothOn = (Button)findViewById(R.id.btnBluetoothOn);
         mBtnBluetoothOff = (Button)findViewById(R.id.btnBluetoothOff);
         mBtnConnect = (Button)findViewById(R.id.btnConnect);
-
+       // mBtnSendData = (Button)findViewById(R.id.btnSendData);
 
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
@@ -115,7 +100,15 @@ public class Home extends AppCompatActivity {
                 listPairedDevices();
             }
         });
-
+      /*  mBtnSendData.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(mThreadConnectedBluetooth != null) {
+                    mThreadConnectedBluetooth.write(mTvSendData.getText().toString());
+                    mTvSendData.setText("");
+                }
+            }
+        });*/
         mBluetoothHandler = new Handler(){
             public void handleMessage(android.os.Message msg){
                 if(msg.what == BT_MESSAGE_READ){
@@ -156,7 +149,6 @@ public class Home extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "블루투스가 이미 비활성화 되어 있습니다.", Toast.LENGTH_SHORT).show();
         }
     }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
@@ -225,25 +217,26 @@ public class Home extends AppCompatActivity {
     private class ConnectedBluetoothThread extends Thread {
         private final BluetoothSocket mmSocket;
         private final InputStream mmInStream;
+        private final OutputStream mmOutStream;
 
         public ConnectedBluetoothThread(BluetoothSocket socket) {
             mmSocket = socket;
             InputStream tmpIn = null;
-
+            OutputStream tmpOut = null;
 
             try {
                 tmpIn = socket.getInputStream();
-
+                tmpOut = socket.getOutputStream();
             } catch (IOException e) {
                 Toast.makeText(getApplicationContext(), "소켓 연결 중 오류가 발생했습니다.", Toast.LENGTH_LONG).show();
             }
 
             mmInStream = tmpIn;
+            mmOutStream = tmpOut;
         }
         public void run() {
             byte[] buffer = new byte[1024];
             int bytes;
-
 
             while (true) {
                 try {
@@ -252,7 +245,6 @@ public class Home extends AppCompatActivity {
                         SystemClock.sleep(100);
                         bytes = mmInStream.available();
                         bytes = mmInStream.read(buffer, 0, bytes);
-
                         mBluetoothHandler.obtainMessage(BT_MESSAGE_READ, bytes, -1, buffer).sendToTarget();
                     }
                 } catch (IOException e) {
@@ -260,7 +252,14 @@ public class Home extends AppCompatActivity {
                 }
             }
         }
-
+        public void write(String str) {
+            byte[] bytes = str.getBytes();
+            try {
+                mmOutStream.write(bytes);
+            } catch (IOException e) {
+                Toast.makeText(getApplicationContext(), "데이터 전송 중 오류가 발생했습니다.", Toast.LENGTH_LONG).show();
+            }
+        }
         public void cancel() {
             try {
                 mmSocket.close();
@@ -269,7 +268,22 @@ public class Home extends AppCompatActivity {
             }
         }
     }
- }
+
+    public void onClickMain(View view) {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void onClickHistory(View view) {
+        Intent intent = new Intent(getApplicationContext(), History.class);
+        startActivity(intent);
+        finish();
+    }
+
+
+
+}
 
 
 
