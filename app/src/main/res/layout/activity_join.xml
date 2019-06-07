@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:ems="10"
-            android:hint="@string/password"
+            android:hint="password(8자리이상)"
             android:inputType="textPassword" />
 
         <EditText
