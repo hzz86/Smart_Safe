@@ -40,13 +40,15 @@ public class JoinActivity extends AppCompatActivity {
     View.OnClickListener listener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            String pwd = null;
+            String pwd=null;
             switch (v.getId()) {
                 case R.id.로그아웃:
                     String id2 = id.getText().toString();
                     pwd = pw.getText().toString();
                     String phone2 = phone.getText().toString();
                     String email2 = email.getText().toString();
+
+
 
                     String sql = "select * from Member where name = '" + id2 + "'";
                     Cursor cursor = db.rawQuery(sql, null);
@@ -58,10 +60,11 @@ public class JoinActivity extends AppCompatActivity {
                         finish();
                     } else {
                         // 없다면 아무 값도 가져오지 않으므로 count 가 0 가져옴
+                        if (pwd.toString().length() >= 8){
                         String sql2 = "insert into Member(name, pw, mobile, email) values('" + id2 + "','" + pwd + "','" + phone2 + "','" + email2 + "')";
                         db.execSQL(sql2);
                         Toast.makeText(JoinActivity.this, "회원가입을 축하합니다.", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(JoinActivity.this, MainActivity.class));
+                        startActivity(new Intent(JoinActivity.this, MainActivity.class));}
                     }
                     cursor.close();
                     break;
@@ -72,7 +75,6 @@ public class JoinActivity extends AppCompatActivity {
                 startActivity(new Intent(JoinActivity.this, JoinActivity.class));
 
             }
-
 
         }
         };
