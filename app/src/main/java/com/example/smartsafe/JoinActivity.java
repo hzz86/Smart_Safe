@@ -68,7 +68,7 @@ public class JoinActivity extends AppCompatActivity {
 
             }
             if (pwd.toString().length() < 8) {
-                Toast.makeText(JoinActivity.this, "8자리이상 입력하세요", Toast.LENGTH_SHORT).show();
+                Toast.makeText(JoinActivity.this, "비밀번호 8자리이상 입력하세요", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(JoinActivity.this, JoinActivity.class));
 
             }
