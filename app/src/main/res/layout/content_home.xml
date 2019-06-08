@@ -37,7 +37,7 @@
 
             <Button
                 android:id="@+id/btnBluetoothOn"
-                android:layout_width="140dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="55dp"
@@ -49,7 +49,7 @@
 
             <Button
                 android:id="@+id/btnBluetoothOff"
-                android:layout_width="140dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
@@ -69,44 +69,40 @@
             android:text="연결 상태"
             android:textStyle="bold" />
 
+        <TextView
+            android:id="@+id/TvReceiveData"
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:gravity="center"
+            android:text="금고잔액"
+            android:textSize="36sp" />
+
         <Button
             android:id="@+id/btnConnect"
-            android:layout_width="wrap_content"
+            android:layout_width="277dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:text="연결하기" />
 
-        <TextView
-            android:id="@+id/TvReceiveData"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="금고잔액"
-            android:ems="10"
-            android:gravity="center" />
-
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btnSendData"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:background="#2478FF"
-            android:text="금고오픈"
+            android:text="금고열기"
             android:textColor="#FFFFFF" />
 
         <Button
-            android:id="@+id/button2"
-            android:layout_width="300dp"
+            android:id="@+id/btnlock"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:background="#2478FF"
-            android:onClick="onClickHistory"
-            android:text="히스토리"
-            android:textColor="#FFFFFF" />
+            android:text="금고닫기" />
 
         <Button
             android:id="@+id/button"

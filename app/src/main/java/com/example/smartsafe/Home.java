@@ -39,11 +39,12 @@ public class Home extends AppCompatActivity {
 
     TextView mTvBluetoothStatus;
     TextView mTvReceiveData;
-  //  TextView mTvSendData;
+   // TextView mTvSendData;
     Button mBtnBluetoothOn;
     Button mBtnBluetoothOff;
     Button mBtnConnect;
-   // Button mBtnSendData;
+    Button mBtnSendData; //금고열기 버튼
+    Button mBtnlock;
 
     BluetoothAdapter mBluetoothAdapter;
     Set<BluetoothDevice> mPairedDevices;
@@ -77,7 +78,8 @@ public class Home extends AppCompatActivity {
         mBtnBluetoothOn = (Button)findViewById(R.id.btnBluetoothOn);
         mBtnBluetoothOff = (Button)findViewById(R.id.btnBluetoothOff);
         mBtnConnect = (Button)findViewById(R.id.btnConnect);
-       // mBtnSendData = (Button)findViewById(R.id.btnSendData);
+        mBtnSendData = (Button)findViewById(R.id.btnSendData);
+        mBtnlock = (Button)findViewById(R.id.btnlock);
 
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
@@ -100,15 +102,27 @@ public class Home extends AppCompatActivity {
                 listPairedDevices();
             }
         });
-      /*  mBtnSendData.setOnClickListener(new Button.OnClickListener() {
+        mBtnSendData.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /*if(mThreadConnectedBluetooth != null) {
+                    mThreadConnectedBluetooth.write(mTvSendData.getText().toString());
+                    mTvSendData.setText(" ");
+                }*/
+                if(mThreadConnectedBluetooth != null) {
+                    mThreadConnectedBluetooth.write("on");
+                }
+            }
+        });
+        mBtnlock.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(mThreadConnectedBluetooth != null) {
-                    mThreadConnectedBluetooth.write(mTvSendData.getText().toString());
-                    mTvSendData.setText("");
+                    mThreadConnectedBluetooth.write("off");
                 }
             }
-        });*/
+        });
+
         mBluetoothHandler = new Handler(){
             public void handleMessage(android.os.Message msg){
                 if(msg.what == BT_MESSAGE_READ){
@@ -275,11 +289,11 @@ public class Home extends AppCompatActivity {
         finish();
     }
 
-    public void onClickHistory(View view) {
+   /* public void onClickOpen(View view) {
         Intent intent = new Intent(getApplicationContext(), History.class);
         startActivity(intent);
         finish();
-    }
+    }*/
 
 
 
