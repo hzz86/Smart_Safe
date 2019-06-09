@@ -19,14 +19,13 @@
             app:title="@string/app_name"
             app:titleTextColor="#FFFFFF" />
 
+
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="297dp"
-            android:layout_height="261dp"
+            android:id="@+id/imageView1"
+            android:layout_width="383dp"
+            android:layout_height="332dp"
             android:layout_gravity="center"
-            android:layout_marginTop="60dp"
-            android:contentDescription="@string/contentDescription"
-            app:srcCompat="@color/colorPrimary" />
+            android:src="@drawable/main_logo" />
 
         <EditText
             android:id="@+id/edit_id"
