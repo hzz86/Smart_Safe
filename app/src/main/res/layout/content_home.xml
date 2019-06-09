@@ -71,8 +71,8 @@
 
         <TextView
             android:id="@+id/TvReceiveData"
-            android:layout_width="wrap_content"
-            android:layout_height="65dp"
+            android:layout_width="374dp"
+            android:layout_height="80dp"
             android:layout_gravity="center"
             android:ems="10"
             android:gravity="center"
@@ -88,6 +88,14 @@
             android:text="연결하기" />
 
 
+        <EditText
+            android:id="@+id/tvSendData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="출금할 금액 입력"
+            android:inputType="number" />
+
         <Button
             android:id="@+id/btnSendData"
             android:layout_width="300dp"
@@ -95,14 +103,8 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:background="#2478FF"
-            android:text="금고열기"
+            android:text="출금"
             android:textColor="#FFFFFF" />
-
-        <Button
-            android:id="@+id/btnlock"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="금고닫기" />
 
         <Button
             android:id="@+id/button"
