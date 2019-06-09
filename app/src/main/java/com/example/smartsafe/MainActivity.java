@@ -3,6 +3,8 @@ package com.example.smartsafe;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,7 +14,15 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 public class MainActivity extends AppCompatActivity {
+
+
 
     //디비작업
     dbhelper openHelper;
@@ -26,21 +36,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageView imageView1 = (ImageView) findViewById(R.id.imageView1) ;
-        imageView1.setImageResource(R.drawable.main_logo) ;
+        ImageView imageView1 = (ImageView) findViewById(R.id.imageView) ;
+        imageView1.setImageResource(R.drawable.mainicon) ;
 
 
         //디비작업
         openHelper = new dbhelper(this);
         db = openHelper.getWritableDatabase();
         id = findViewById(R.id.edit_id);
-        pw =  findViewById(R.id.edit_pw);
+        pw = findViewById(R.id.edit_pw);
         loginBtn = findViewById(R.id.loginBtn);
         joinBtn = findViewById(R.id.joinBtn);
         loginBtn.setOnClickListener(listener);
         joinBtn.setOnClickListener(listener);
         //여기까지
     }
+
+
+
 
     //디비작업
     View.OnClickListener listener = new View.OnClickListener() {
@@ -52,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Log.e("YHJ","" + "checking.........................");
             switch (v.getId()) {
-                case R.id.joinBtn:
+                 case R.id.joinBtn:
                     startActivity(new Intent(MainActivity.this, JoinActivity.class));
                     finish();
                     break;
