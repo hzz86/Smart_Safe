@@ -43,7 +43,9 @@ public class Home extends AppCompatActivity {
     Button mBtnBluetoothOn;
     Button mBtnBluetoothOff;
     Button mBtnConnect;
-    Button mBtnSendData; //금고열기 버튼
+    Button mBtnSendData; //출금 버튼
+    Button mBtnOpen; //금고오픈 버튼
+    Button mBtnLock; //금고닫기 버튼
 
     BluetoothAdapter mBluetoothAdapter;
     Set<BluetoothDevice> mPairedDevices;
@@ -78,6 +80,8 @@ public class Home extends AppCompatActivity {
         mBtnBluetoothOff = (Button)findViewById(R.id.btnBluetoothOff);
         mBtnConnect = (Button)findViewById(R.id.btnConnect);
         mBtnSendData = (Button)findViewById(R.id.btnSendData);
+        mBtnOpen=(Button)findViewById(R.id.btnopen);
+        mBtnLock=(Button)findViewById(R.id.btnlock);
 
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
@@ -106,6 +110,24 @@ public class Home extends AppCompatActivity {
                 if(mThreadConnectedBluetooth != null) {
                     mThreadConnectedBluetooth.write(mTvSendData.getText().toString());
                     mTvSendData.setText(" ");
+                }
+            }
+        });
+
+        mBtnOpen.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(mThreadConnectedBluetooth != null) {
+                    mThreadConnectedBluetooth.write("on");
+                }
+            }
+        });
+
+        mBtnLock.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(mThreadConnectedBluetooth != null) {
+                    mThreadConnectedBluetooth.write("off");
                 }
             }
         });

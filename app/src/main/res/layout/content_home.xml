@@ -59,6 +59,14 @@
 
         </LinearLayout>
 
+        <Button
+            android:id="@+id/btnConnect"
+            android:layout_width="277dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="연결하기" />
+
         <TextView
             android:id="@+id/tvBluetoothStatus"
             android:layout_width="170dp"
@@ -79,14 +87,12 @@
             android:text="금고잔액"
             android:textSize="36sp" />
 
-        <Button
-            android:id="@+id/btnConnect"
-            android:layout_width="277dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:text="연결하기" />
 
+        <Button
+            android:id="@+id/btnopen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="금고열기" />
 
         <EditText
             android:id="@+id/tvSendData"
@@ -105,6 +111,12 @@
             android:background="#2478FF"
             android:text="출금"
             android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnlock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="금고닫기" />
 
         <Button
             android:id="@+id/button"
