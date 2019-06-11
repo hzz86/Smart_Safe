@@ -30,7 +30,6 @@ public class JoinActivity extends AppCompatActivity {
         pw = findViewById(R.id.editpwd);
         phone = findViewById(R.id.editphone);
         email =  findViewById(R.id.editemail);
-        salt = findViewById(R.id.editsalt);
         joinBtn = findViewById(R.id.로그아웃);
         joinBtn.setOnClickListener(listener);
         //여기까지

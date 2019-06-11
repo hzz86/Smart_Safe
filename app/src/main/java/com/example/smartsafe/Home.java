@@ -18,6 +18,7 @@ import android.support.v7.widget.Toolbar;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,6 +50,7 @@ public class Home extends AppCompatActivity {
     Button mBtnSendData; //출금 버튼
     Button mBtnOpen; //금고오픈 버튼
     Button mBtnLock; //금고닫기 버튼
+    ImageButton mBtnRenew;
 
     BluetoothAdapter mBluetoothAdapter;
     Set<BluetoothDevice> mPairedDevices;
@@ -86,6 +88,7 @@ public class Home extends AppCompatActivity {
         mBtnOpen=(Button)findViewById(R.id.btnopen);
         mBtnLock=(Button)findViewById(R.id.btnlock);
         sw=(Switch)findViewById(R.id.swbluetooth);
+        mBtnRenew=(ImageButton)findViewById(R.id.btnrenew);
 
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
@@ -124,6 +127,15 @@ public class Home extends AppCompatActivity {
                 mTvSendData.setText(" ");
                 Toast.makeText(getApplicationContext(), "출금이 완료되었습니다.", Toast.LENGTH_LONG).show();
             }
+            }
+        });
+
+        mBtnRenew.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(mThreadConnectedBluetooth != null) {
+                    mThreadConnectedBluetooth.write("2");
+                }
             }
         });
 

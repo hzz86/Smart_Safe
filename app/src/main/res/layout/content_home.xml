@@ -68,7 +68,7 @@
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/imageButton"
+                android:id="@+id/btnrenew"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/ic_refresh" />
