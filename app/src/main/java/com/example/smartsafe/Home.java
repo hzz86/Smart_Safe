@@ -122,6 +122,7 @@ public class Home extends AppCompatActivity {
                 if(mThreadConnectedBluetooth != null) {
                 mThreadConnectedBluetooth.write(mTvSendData.getText().toString());
                 mTvSendData.setText(" ");
+                Toast.makeText(getApplicationContext(), "출금이 완료되었습니다.", Toast.LENGTH_LONG).show();
             }
             }
         });
@@ -131,6 +132,7 @@ public class Home extends AppCompatActivity {
             public void onClick(View view) {
                 if(mThreadConnectedBluetooth != null) {
                     mThreadConnectedBluetooth.write("0");
+                    Toast.makeText(getApplicationContext(), "금고가 열렸습니다.", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -140,6 +142,7 @@ public class Home extends AppCompatActivity {
             public void onClick(View view) {
                 if(mThreadConnectedBluetooth != null) {
                     mThreadConnectedBluetooth.write("1");
+                    Toast.makeText(getApplicationContext(), "금고가 닫혔습니다.", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -154,7 +157,7 @@ public class Home extends AppCompatActivity {
                     } catch (UnsupportedEncodingException e) {
                         e.printStackTrace();
                     }
-                    mTvReceiveData.setText(readMessage+"원");
+                    mTvReceiveData.setText(readMessage);
                 }
             }
         };
