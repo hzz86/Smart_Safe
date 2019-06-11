@@ -30,42 +30,35 @@
             app:titleTextColor="#FFFFFF" />
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btnBluetoothOn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="55dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:background="#23A229"
-                android:text="블루투스 ON"
-                android:textColor="#FFFFFF" />
-
-            <Button
-                android:id="@+id/btnBluetoothOff"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:background="#E0594F"
-                android:text="블루투스 OFF"
-                android:textColor="#FFFFFF" />
-
-        </LinearLayout>
+        <Button
+            android:id="@+id/btnBluetoothOff"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="#E0594F"
+            android:text="블루투스 OFF"
+            android:textColor="#FFFFFF" />
 
         <Button
-            android:id="@+id/btnConnect"
-            android:layout_width="277dp"
+            android:id="@+id/btnBluetoothOn"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:text="연결하기" />
+            android:background="#23A229"
+            android:text="블루투스 ON"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnConnect"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="#2478FF"
+            android:text="연결하기"
+            android:textColor="#FFFFFF" />
 
         <TextView
             android:id="@+id/tvBluetoothStatus"
@@ -90,40 +83,49 @@
 
         <Button
             android:id="@+id/btnopen"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:text="금고열기" />
-
-        <EditText
-            android:id="@+id/tvSendData"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="출금할 금액 입력"
-            android:inputType="number" />
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="#2478FF"
+            android:text="금고열기"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/btnSendData"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:background="#2478FF"
             android:text="출금"
             android:textColor="#FFFFFF" />
 
+        <EditText
+            android:id="@+id/tvSendData"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:hint="출금할 금액 입력"
+            android:inputType="number" />
+
         <Button
             android:id="@+id/btnlock"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:text="금고닫기" />
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="#2478FF"
+            android:text="금고닫기"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/button"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:background="#2478FF"
             android:onClick="onClickMain"
             android:text="로그아웃"
