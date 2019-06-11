@@ -49,6 +49,7 @@
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_weight="1"
                 android:background="#F9F9F9"
                 android:text="연결하기"
                 android:textColor="#2478FF"
@@ -59,6 +60,7 @@
                 android:layout_width="208dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:text="연결 상태"
                 android:textStyle="bold" />
@@ -72,36 +74,47 @@
 
             <Button
                 android:id="@+id/btnopen"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:background="#2478FF"
+                android:gravity="center"
                 android:text="금고열기"
                 android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/btnlock"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:background="#2478FF"
+                android:gravity="center"
                 android:text="금고닫기"
                 android:textColor="#FFFFFF" />
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/TvReceiveData"
-            android:layout_width="374dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center"
-            android:ems="10"
-            android:gravity="center"
-            android:text="금고잔액"
-            android:textSize="36sp"
-            android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/TvReceiveData"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:ems="10"
+                android:gravity="center"
+                android:text="금고잔액"
+                android:textAlignment="center"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                android:lineSpacingExtra="2sp" />
+
+        </LinearLayout>
 
 
         <EditText
