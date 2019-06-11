@@ -120,9 +120,9 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(mThreadConnectedBluetooth != null) {
-                    mThreadConnectedBluetooth.write(mTvSendData.getText().toString());
-                    mTvSendData.setText(" ");
-                }
+                mThreadConnectedBluetooth.write(mTvSendData.getText().toString());
+                mTvSendData.setText(" ");
+            }
             }
         });
 
@@ -130,7 +130,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(mThreadConnectedBluetooth != null) {
-                    mThreadConnectedBluetooth.write("on");
+                    mThreadConnectedBluetooth.write("0");
                 }
             }
         });
@@ -139,7 +139,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(mThreadConnectedBluetooth != null) {
-                    mThreadConnectedBluetooth.write("off");
+                    mThreadConnectedBluetooth.write("1");
                 }
             }
         });
