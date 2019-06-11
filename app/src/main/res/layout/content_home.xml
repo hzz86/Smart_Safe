@@ -39,8 +39,9 @@
             android:textSize="20sp" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="50dp"
+            android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:orientation="horizontal">
 
@@ -69,35 +70,6 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btnopen"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:background="#2478FF"
-                android:gravity="center"
-                android:text="금고열기"
-                android:textColor="#FFFFFF" />
-
-            <Button
-                android:id="@+id/btnlock"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:background="#2478FF"
-                android:gravity="center"
-                android:text="금고닫기"
-                android:textColor="#FFFFFF" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
             android:layout_height="150dp"
             android:orientation="vertical">
 
@@ -108,33 +80,70 @@
                 android:layout_gravity="center"
                 android:ems="10"
                 android:gravity="center"
+                android:lineSpacingExtra="2sp"
                 android:text="금고잔액"
                 android:textAlignment="center"
                 android:textSize="36sp"
-                android:textStyle="bold"
-                android:lineSpacingExtra="2sp" />
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="76dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnopen"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="#2478FF"
+                android:gravity="center"
+                android:text="금고열기"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btnlock"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="#2478FF"
+                android:gravity="center"
+                android:text="금고닫기"
+                android:textColor="#FFFFFF" />
 
         </LinearLayout>
 
 
-        <EditText
-            android:id="@+id/tvSendData"
+        <LinearLayout
             android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:layout_gravity="center"
-            android:ems="10"
-            android:hint="출금할 금액 입력"
-            android:inputType="number" />
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btnSendData"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="#2478FF"
-            android:text="출금"
-            android:textColor="#FFFFFF" />
+            <EditText
+                android:id="@+id/tvSendData"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ems="10"
+                android:hint="출금할 금액 입력"
+                android:inputType="number" />
+
+            <Button
+                android:id="@+id/btnSendData"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#2478FF"
+                android:text="출금"
+                android:textColor="#FFFFFF" />
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/button"
