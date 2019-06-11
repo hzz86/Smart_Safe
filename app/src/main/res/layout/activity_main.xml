@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:src="@drawable/main_logo"
+    android:src="@drawable/mainicon"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -26,7 +26,7 @@
             android:layout_width="383dp"
             android:layout_height="332dp"
             android:layout_gravity="center"
-            android:src="@drawable/main_logo" />
+            android:src="@drawable/mainicon" />
 
         <EditText
             android:id="@+id/edit_id"

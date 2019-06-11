@@ -32,11 +32,11 @@ public class MainActivity extends AppCompatActivity {
     //여기까지
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageView imageView1 = (ImageView) findViewById(R.id.imageView) ;
+        ImageView imageView1 = (ImageView) findViewById(R.id.imageView1) ;
         imageView1.setImageResource(R.drawable.mainicon) ;
 
 
