@@ -32,10 +32,13 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
+import android.widget.Switch;
+
 
 public class Home extends AppCompatActivity {
 
 //    SwipeRefreshLayout layout;
+    Switch sw;
 
     TextView mTvBluetoothStatus;
     TextView mTvReceiveData;
@@ -82,6 +85,7 @@ public class Home extends AppCompatActivity {
         mBtnSendData = (Button)findViewById(R.id.btnSendData);
         mBtnOpen=(Button)findViewById(R.id.btnopen);
         mBtnLock=(Button)findViewById(R.id.btnlock);
+        sw=(Switch)findViewById(R.id.swbluetooth);
 
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
@@ -92,6 +96,14 @@ public class Home extends AppCompatActivity {
                 bluetoothOn();
             }
         });
+        sw.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               bluetoothOn();
+            }
+
+        });
+
         mBtnBluetoothOff.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {

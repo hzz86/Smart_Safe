@@ -16,10 +16,9 @@
         android:layout_height="659dp"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp"
 
 
-        >
+        tools:layout_editor_absoluteY="8dp">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/app_toolbar"
@@ -91,6 +90,15 @@
             android:text="금고열기"
             android:textColor="#FFFFFF" />
 
+        <EditText
+            android:id="@+id/tvSendData"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:hint="출금할 금액 입력"
+            android:inputType="number" />
+
         <Button
             android:id="@+id/btnSendData"
             android:layout_width="300dp"
@@ -100,15 +108,6 @@
             android:background="#2478FF"
             android:text="출금"
             android:textColor="#FFFFFF" />
-
-        <EditText
-            android:id="@+id/tvSendData"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:ems="10"
-            android:hint="출금할 금액 입력"
-            android:inputType="number" />
 
         <Button
             android:id="@+id/btnlock"
@@ -130,6 +129,12 @@
             android:onClick="onClickMain"
             android:text="로그아웃"
             android:textColor="#FFFFFF" />
+
+        <Switch
+            android:id="@+id/swbluetooth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="블루투스" />
 
 
     </LinearLayout>
