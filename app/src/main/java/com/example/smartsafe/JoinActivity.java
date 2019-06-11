@@ -14,7 +14,7 @@ public class JoinActivity extends AppCompatActivity {
     //디비작업
     dbhelper openHelper;
     SQLiteDatabase db;
-    EditText id, pw, phone, email;
+    EditText id, pw, phone, email,salt;
     Button joinBtn;
     //여기까지
 
@@ -30,6 +30,7 @@ public class JoinActivity extends AppCompatActivity {
         pw = findViewById(R.id.editpwd);
         phone = findViewById(R.id.editphone);
         email =  findViewById(R.id.editemail);
+        salt = findViewById(R.id.editsalt);
         joinBtn = findViewById(R.id.로그아웃);
         joinBtn.setOnClickListener(listener);
         //여기까지
@@ -52,7 +53,12 @@ public class JoinActivity extends AppCompatActivity {
 
                     String sql = "select * from Member where name = '" + id2 + "'";
                     Cursor cursor = db.rawQuery(sql, null);
+                    String a = "select * from Member where name = '" + pw + "'";
+                    db.rawQuery(a,null);
+                    String salt = SHA256Util.generateSalt();
+                    String password=a;
 
+                    String newpassword = SHA256Util.getEncrypt(password,salt);
                     if (cursor.getCount() > 0) {
                         // 해당 아이디가 있으면 1개의 row를 가져옴
                         Toast.makeText(JoinActivity.this, "이미 존재하는 아이디입니다.", Toast.LENGTH_SHORT).show();
@@ -61,7 +67,7 @@ public class JoinActivity extends AppCompatActivity {
                     } else {
                         // 없다면 아무 값도 가져오지 않으므로 count 가 0 가져옴
                         if (pwd.toString().length() >= 8){
-                        String sql2 = "insert into Member(name, pw, mobile, email) values('" + id2 + "','" + pwd + "','" + phone2 + "','" + email2 + "')";
+                        String sql2 = "insert into Member(name, pw, pw2, mobile, email,salt) values('" + id2 + "','" + pwd + "','"+newpassword+"','" + phone2 + "','" + email2 + "','"+salt+"')";
                         db.execSQL(sql2);
                         Toast.makeText(JoinActivity.this, "회원가입을 축하합니다.", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(JoinActivity.this, MainActivity.class));}
@@ -88,3 +94,5 @@ public class JoinActivity extends AppCompatActivity {
     }
 
 }
+
+
