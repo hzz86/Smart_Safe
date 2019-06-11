@@ -43,8 +43,8 @@ public class Home extends AppCompatActivity {
     TextView mTvBluetoothStatus;
     TextView mTvReceiveData;
     TextView mTvSendData;
-    Button mBtnBluetoothOn;
-    Button mBtnBluetoothOff;
+   // Button mBtnBluetoothOn;
+   // Button mBtnBluetoothOff;
     Button mBtnConnect;
     Button mBtnSendData; //출금 버튼
     Button mBtnOpen; //금고오픈 버튼
@@ -79,8 +79,8 @@ public class Home extends AppCompatActivity {
         mTvBluetoothStatus = (TextView)findViewById(R.id.tvBluetoothStatus);
         mTvReceiveData = (TextView)findViewById(R.id.TvReceiveData);
         mTvSendData =  (EditText) findViewById(R.id.tvSendData);
-        mBtnBluetoothOn = (Button)findViewById(R.id.btnBluetoothOn);
-        mBtnBluetoothOff = (Button)findViewById(R.id.btnBluetoothOff);
+     //   mBtnBluetoothOn = (Button)findViewById(R.id.btnBluetoothOn);
+      //  mBtnBluetoothOff = (Button)findViewById(R.id.btnBluetoothOff);
         mBtnConnect = (Button)findViewById(R.id.btnConnect);
         mBtnSendData = (Button)findViewById(R.id.btnSendData);
         mBtnOpen=(Button)findViewById(R.id.btnopen);
@@ -90,12 +90,12 @@ public class Home extends AppCompatActivity {
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
 
-        mBtnBluetoothOn.setOnClickListener(new Button.OnClickListener() {
+     /*   mBtnBluetoothOn.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
                 bluetoothOn();
             }
-        });
+        });*/
         sw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -104,12 +104,12 @@ public class Home extends AppCompatActivity {
 
         });
 
-        mBtnBluetoothOff.setOnClickListener(new Button.OnClickListener() {
+       /* mBtnBluetoothOff.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
                 bluetoothOff();
             }
-        });
+        });*/
         mBtnConnect.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {

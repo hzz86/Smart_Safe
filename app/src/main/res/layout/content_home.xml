@@ -29,25 +29,11 @@
             app:titleTextColor="#FFFFFF" />
 
 
-        <Button
-            android:id="@+id/btnBluetoothOff"
-            android:layout_width="300dp"
+        <Switch
+            android:id="@+id/swbluetooth"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:background="#E0594F"
-            android:text="블루투스 OFF"
-            android:textColor="#FFFFFF" />
-
-        <Button
-            android:id="@+id/btnBluetoothOn"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="#23A229"
-            android:text="블루투스 ON"
-            android:textColor="#FFFFFF" />
+            android:text="블루투스" />
 
         <Button
             android:id="@+id/btnConnect"
@@ -129,12 +115,6 @@
             android:onClick="onClickMain"
             android:text="로그아웃"
             android:textColor="#FFFFFF" />
-
-        <Switch
-            android:id="@+id/swbluetooth"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="블루투스" />
 
 
     </LinearLayout>
