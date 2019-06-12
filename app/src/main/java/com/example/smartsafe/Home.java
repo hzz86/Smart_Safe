@@ -85,6 +85,7 @@ public class Home extends AppCompatActivity {
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
 
+        //블루투스 실행
         sw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,13 +94,15 @@ public class Home extends AppCompatActivity {
 
         });
 
-
+        //블루투스 연결할 기기 선택
         mBtnConnect.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
                 listPairedDevices();
             }
         });
+
+        //아두이노에서 보낸 값(=금고에 저장된 금액) 출력
         mBtnSendData.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -111,6 +114,7 @@ public class Home extends AppCompatActivity {
             }
         });
 
+        //새로고침
         mBtnRenew.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -120,6 +124,7 @@ public class Home extends AppCompatActivity {
             }
         });
 
+        //금고 열기
         mBtnOpen.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -130,6 +135,7 @@ public class Home extends AppCompatActivity {
             }
         });
 
+        //금고 닫기
         mBtnLock.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -171,16 +177,7 @@ public class Home extends AppCompatActivity {
             }
         }
     }
-    void bluetoothOff() {
-        if (mBluetoothAdapter.isEnabled()) {
-            mBluetoothAdapter.disable();
-            Toast.makeText(getApplicationContext(), "블루투스가 비활성화 되었습니다.", Toast.LENGTH_SHORT).show();
-            mTvBluetoothStatus.setText("비활성화");
-        }
-        else {
-            Toast.makeText(getApplicationContext(), "블루투스가 이미 비활성화 되어 있습니다.", Toast.LENGTH_SHORT).show();
-        }
-    }
+   
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {

@@ -14,7 +14,7 @@ public class JoinActivity extends AppCompatActivity {
 
     dbhelper openHelper;
     SQLiteDatabase db;
-    EditText id, pw, phone, email,salt;
+    EditText id, pw, phone, email, salt;
     Button joinBtn;
 
 

@@ -9,8 +9,9 @@ class dbhelper extends SQLiteOpenHelper {
 
     Context context;
 
-    public dbhelper(Context context) {super(context, "ourdb.db", null, 1);
-    this.context=context;
+    public dbhelper(Context context) {
+        super(context, "ourdb.db", null, 1);
+        this.context=context;
     }
 
     @Override
@@ -28,6 +29,5 @@ class dbhelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
-
 }
 
