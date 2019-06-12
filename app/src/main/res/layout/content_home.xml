@@ -102,6 +102,7 @@
                 android:layout_marginTop="10dp"
                 android:background="#2478FF"
                 android:gravity="center"
+                android:soundEffectsEnabled="false"
                 android:text="금고열기"
                 android:textColor="#FFFFFF" />
 

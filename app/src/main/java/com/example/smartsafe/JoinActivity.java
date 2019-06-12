@@ -11,19 +11,18 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class JoinActivity extends AppCompatActivity {
-    //디비작업
+
     dbhelper openHelper;
     SQLiteDatabase db;
     EditText id, pw, phone, email,salt;
     Button joinBtn;
-    //여기까지
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join);
 
-        //디비작업
         openHelper = new dbhelper(this);
         db = openHelper.getWritableDatabase();
         id = findViewById(R.id.editname);
@@ -32,7 +31,6 @@ public class JoinActivity extends AppCompatActivity {
         email =  findViewById(R.id.editemail);
         joinBtn = findViewById(R.id.로그아웃);
         joinBtn.setOnClickListener(listener);
-        //여기까지
 
     }
 
@@ -59,12 +57,10 @@ public class JoinActivity extends AppCompatActivity {
 
                     String newpassword = SHA256Util.getEncrypt(password,salt);
                     if (cursor.getCount() > 0) {
-                        // 해당 아이디가 있으면 1개의 row를 가져옴
                         Toast.makeText(JoinActivity.this, "이미 존재하는 아이디입니다.", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(JoinActivity.this, JoinActivity.class));
                         finish();
                     } else {
-                        // 없다면 아무 값도 가져오지 않으므로 count 가 0 가져옴
                         if (pwd.toString().length() >= 8){
                         String sql2 = "insert into Member(name, pw, pw2, mobile, email,salt) values('" + id2 + "','" + pwd + "','"+newpassword+"','" + phone2 + "','" + email2 + "','"+salt+"')";
                         db.execSQL(sql2);
@@ -84,7 +80,6 @@ public class JoinActivity extends AppCompatActivity {
         }
         };
 
-    //여기까지
 
     public void onClickMain(View view) {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);

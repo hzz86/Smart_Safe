@@ -10,7 +10,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.v7.widget.Toolbar;
@@ -21,8 +20,6 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -38,14 +35,11 @@ import android.widget.Switch;
 
 public class Home extends AppCompatActivity {
 
-//    SwipeRefreshLayout layout;
     Switch sw;
 
     TextView mTvBluetoothStatus;
     TextView mTvReceiveData;
     TextView mTvSendData;
-   // Button mBtnBluetoothOn;
-   // Button mBtnBluetoothOff;
     Button mBtnConnect;
     Button mBtnSendData; //출금 버튼
     Button mBtnOpen; //금고오픈 버튼
@@ -81,8 +75,6 @@ public class Home extends AppCompatActivity {
         mTvBluetoothStatus = (TextView)findViewById(R.id.tvBluetoothStatus);
         mTvReceiveData = (TextView)findViewById(R.id.TvReceiveData);
         mTvSendData =  (EditText) findViewById(R.id.tvSendData);
-     //   mBtnBluetoothOn = (Button)findViewById(R.id.btnBluetoothOn);
-      //  mBtnBluetoothOff = (Button)findViewById(R.id.btnBluetoothOff);
         mBtnConnect = (Button)findViewById(R.id.btnConnect);
         mBtnSendData = (Button)findViewById(R.id.btnSendData);
         mBtnOpen=(Button)findViewById(R.id.btnopen);
@@ -93,12 +85,6 @@ public class Home extends AppCompatActivity {
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
 
-     /*   mBtnBluetoothOn.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                bluetoothOn();
-            }
-        });*/
         sw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,12 +93,7 @@ public class Home extends AppCompatActivity {
 
         });
 
-       /* mBtnBluetoothOff.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                bluetoothOff();
-            }
-        });*/
+
         mBtnConnect.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -134,7 +115,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(mThreadConnectedBluetooth != null) {
-                    mThreadConnectedBluetooth.write("2");
+                    mThreadConnectedBluetooth.write("result");
                 }
             }
         });
@@ -143,7 +124,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(mThreadConnectedBluetooth != null) {
-                    mThreadConnectedBluetooth.write("0");
+                    mThreadConnectedBluetooth.write("on");
                     Toast.makeText(getApplicationContext(), "금고가 열렸습니다.", Toast.LENGTH_LONG).show();
                 }
             }
@@ -153,7 +134,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(mThreadConnectedBluetooth != null) {
-                    mThreadConnectedBluetooth.write("1");
+                    mThreadConnectedBluetooth.write("off");
                     Toast.makeText(getApplicationContext(), "금고가 닫혔습니다.", Toast.LENGTH_LONG).show();
                 }
             }
@@ -325,13 +306,6 @@ public class Home extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
-
-   /* public void onClickOpen(View view) {
-        Intent intent = new Intent(getApplicationContext(), History.class);
-        startActivity(intent);
-        finish();
-    }*/
-
 
 
 }

@@ -14,12 +14,10 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    //디비작업
     dbhelper openHelper;
     EditText id, pw;
     SQLiteDatabase db;
     Button loginBtn, joinBtn;
-    //여기까지
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +27,6 @@ public class MainActivity extends AppCompatActivity {
         ImageView imageView1 = (ImageView) findViewById(R.id.imageView1) ;
         imageView1.setImageResource(R.drawable.mainicon) ;
 
-
-        //디비작업
         openHelper = new dbhelper(this);
         db = openHelper.getWritableDatabase();
         id = findViewById(R.id.edit_id);
@@ -39,15 +35,11 @@ public class MainActivity extends AppCompatActivity {
         joinBtn = findViewById(R.id.joinBtn);
         loginBtn.setOnClickListener(listener);
         joinBtn.setOnClickListener(listener);
-        //여기까지
     }
 
-    //디비작업
+
     View.OnClickListener listener = new View.OnClickListener() {
         @Override
-
-
-
         public void onClick(View v) {
 
             //Log.e("YHJ","" + "checking.........................");
@@ -88,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     };
-    //여기까지
+
 
 }
 
