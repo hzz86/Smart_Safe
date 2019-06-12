@@ -79,7 +79,7 @@
                 android:text="@string/undo" />
 
             <Button
-                android:id="@+id/로그아웃"
+                android:id="@+id/btjoinok"
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
